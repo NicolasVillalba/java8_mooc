@@ -79,7 +79,7 @@ public class Lesson1 {
      *
      * Convert every key-value pair of the map into a string and append them all
      * into a single string, in iteration order.
-     */
+         */
     private void exercise4() {
         Map<String, Integer> map = new TreeMap<String,Integer>();
         map.put("c", 3);
@@ -101,7 +101,8 @@ public class Lesson1 {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
     /* YOUR CODE HERE */
-        list.forEach(l -> System.out.println(l));
+        Runnable  r1 = ()-> list.forEach(System.out::println);
+        r1.run();
     }
 
     /**
