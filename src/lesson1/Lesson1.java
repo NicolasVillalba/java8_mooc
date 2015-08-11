@@ -112,6 +112,24 @@ public class Lesson1 {
      */
     public static void main(String[] args) {
         Lesson1 lesson = new Lesson1();
-        lesson.runExercises();
+        //lesson.runExercises();
+        example();
+
+    }
+
+    public static void example() {
+        int number = 1;
+        switch (number){
+            case 0:
+                System.out.println("0 case");
+                break;
+            case 1: {
+                System.out.println("1 case");
+            }
+            default: {
+                System.out.println("Default");
+            }
+
+        }
     }
 }

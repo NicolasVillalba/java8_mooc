@@ -71,7 +71,7 @@ public class Streams {
     }
 
     private void getMode() {
-        int[] numbers = {3,4,7,6,3,6,8,5,7,2,5,4,6,5,8,3,5,6,8,3,6};
+        int[] numbers = {3,4,7,6,3,6,8,5,7,2,5,4,6,5,8,3,5,6,8,3};
         HashMap<Integer, Integer> numbers_repetition = new HashMap<>();
         int maxNumberRepeated = Integer.MIN_VALUE;
         for(int i = 0; i < numbers.length; i++) {
@@ -87,6 +87,12 @@ public class Streams {
                     (numbers_repetition.containsKey(maxNumberRepeated) &&
                     numbers_repetition.get(numbers[i]) > numbers_repetition.get(maxNumberRepeated))) {
                 maxNumberRepeated = numbers[i];
+            } else if((!numbers_repetition.containsKey(maxNumberRepeated) ||
+                    (numbers_repetition.containsKey(maxNumberRepeated) &&
+                            numbers_repetition.get(numbers[i]) == numbers_repetition.get(maxNumberRepeated)))) {
+                if(numbers[i] < maxNumberRepeated) {
+                    maxNumberRepeated = numbers[i];
+                }
             }
         }
         System.out.println("Mode is: "+maxNumberRepeated);
